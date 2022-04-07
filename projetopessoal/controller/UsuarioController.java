@@ -62,4 +62,9 @@ public class UsuarioController {
 			.map(resp -> ResponseEntity.status(HttpStatus.OK).body(resp))
 			.orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
 	}
+	
+		@DeleteMapping("/{id}")
+	public void delete(@PathVariable Long id) {
+		usuarioRepository.deleteById(id); 
+	}
 }
